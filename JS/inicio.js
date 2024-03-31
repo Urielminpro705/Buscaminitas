@@ -8,7 +8,10 @@ $(document).ready(function() {
     btnModoBandera.click(function () {
         if (esModoBomba == true) {
             $("#div-switch-bandera-efectoGota").removeClass("switch-bandera-efectoGota-reverse")
-            $("#div-switch-bandera-efectoGota").addClass("switch-bandera-efectoGota")
+            $("#div-switch-bandera-efectoGota").css("left","50px");
+            setTimeout(() => {
+                $("#div-switch-bandera-efectoGota").addClass("switch-bandera-efectoGota");
+            }, 1);
             btnModoBomba.removeClass("switch-modo-activo")
             btnModoBandera.addClass("switch-modo-activo")
             esModoBomba = false;
@@ -18,7 +21,11 @@ $(document).ready(function() {
     btnModoBomba.click(function () {
         if (esModoBomba == false) {
             $("#div-switch-bandera-efectoGota").removeClass("switch-bandera-efectoGota")
-            $("#div-switch-bandera-efectoGota").addClass("switch-bandera-efectoGota-reverse")
+            $("#div-switch-bandera-efectoGota").css("left","0");
+            setTimeout(() => {
+                $("#div-switch-bandera-efectoGota").addClass("switch-bandera-efectoGota-reverse");
+                $("#div-switch-bandera-efectoGota").css("left","50px");
+            }, 1);
             btnModoBomba.addClass("switch-modo-activo")
             btnModoBandera.removeClass("switch-modo-activo")
             esModoBomba = true;
@@ -55,5 +62,16 @@ $(document).ready(function() {
         columna = (posicion%tamaño);
         console.log("la fila es " + fila);
         console.log("la columna es " + columna);
+
+        if (esModoBomba == false) {
+            if ($(this).hasClass("btn-casillas-bandera")) {
+                $(this).removeClass("btn-casillas-bandera")
+                $(this).addClass("btn-casillas-virgen")
+                
+            } else {
+                $(this).removeClass("btn-casillas-virgen")
+                $(this).addClass("btn-casillas-bandera")
+            }
+        }
     })
 })

@@ -22,8 +22,54 @@ body {
 
 .btn-casillas {
     border: none;
+    margin: 10px 0px;
+    background-color: transparent;
+    border-left: 1.5px solid var(--tercero);
+    border-right: 1.5px solid var(--tercero);
+    color: var(--tercero);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.btn-casillas::after {
+    content: "";
+    width: 30px;
+    height: 50px;
+    box-sizing: border-box;
+    position: absolute;
+    border-top: 1.5px solid var(--tercero);
+    border-bottom: 1.5px solid var(--tercero);
+}
+
+.btn-casillas::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.btn-casillas-virgen::before {
+    content: "";
     background-color: var(--secundario);
-    margin: 2px;
+    width: 50px;
+    height: 50px;
+}
+
+.btn-casillas-bandera::before {
+    background-color: var(--secundario);
+    content: "\f024";
+    font: var(--fa-font-solid);
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    color: var(--primario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
 }
 
 #cont-switch-bandera {
@@ -54,35 +100,33 @@ body {
 }
 
 .switch-modo-activo {
-    transition: 0.4s;
     color: var(--primario);
-    background-color: var(--secundario);
     transform-origin: left;
+    background-color: var(--secundario);
+}
+
+#div-switch-bandera-efectoGota {
+    left: 50px;
+    border-radius:50%;
+    height: 50px;
+    position: absolute;
+    width: 50px;
+    background-color: var(--secundario);
+    transition: 0.3s;
 }
 
 .switch-bandera-efectoGota {
-    background-color: var(--secundario);
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    left: 0;
-    border-radius:50%;
-    animation: switchModo 0.4s reverse;
+    animation: switchModo 0.4s ease-in forwards;
 }
 
 .switch-bandera-efectoGota-reverse {
-    background-color: var(--secundario);
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    left: 0;
-    border-radius:50%;
-    animation: switchModo 0.4s normal;
+    animation: switchModo 0.4s reverse forwards;
 }
 
 @keyframes switchModo {
-    0% {
+    10% {
         width: 50px;
+        left: 50px;
         height: 50px;
     }
 
@@ -94,8 +138,8 @@ body {
     }
     
     100% {
+        left: 0;
         width: 50px;
         height: 50px;
-        left: 50px;
     }
 }
