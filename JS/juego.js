@@ -197,6 +197,6 @@ $(document).ready(function() {
     }) 
 
     $("#btn-volverAlMenu").click(function() {
-        window.location.href = "/Buscaminitas/index.html"
+        window.location.href = "index.html"
     })
 })
