@@ -65,7 +65,7 @@ body {
     content: "";
     position: absolute;
     z-index: 1;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .btn-casillas-virgen::before {
