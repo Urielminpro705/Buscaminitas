@@ -191,4 +191,12 @@ $(document).ready(function() {
             }
         }
     })
+
+    $("#btn-jugarDeNuevo").click(function() {
+        location.reload();
+    }) 
+
+    $("#btn-volverAlMenu").click(function() {
+        window.location.href = "/Buscaminitas/index.html"
+    })
 })
