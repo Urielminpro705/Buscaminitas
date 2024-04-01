@@ -53,7 +53,7 @@ body {
 
 .btn-casillas-virgen::before {
     content: "";
-    background-color: var(--secundario);
+    background-color: rgba(255, 0, 0, 0.226);
     width: 50px;
     height: 50px;
 }
@@ -70,6 +70,13 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+}
+
+.btn-casillas-usado::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
 }
 
 #cont-switch-bandera {
