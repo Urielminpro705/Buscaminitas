@@ -6,6 +6,7 @@ $(document).ready(function() {
     let btnModoBomba = $("#switch-bandera-bomba");
     let esModoBomba = true;
     let yaPerdio = false;
+    let esPrimerToque = true;
 
     btnModoBandera.click(function () {
         if (esModoBomba == true) {
@@ -151,6 +152,10 @@ $(document).ready(function() {
     plantarBombas();
 
     $('.btn-casillas').click(function () {
+        if (esPrimerToque == true) {
+            tableroVisual.removeClass("tablero-mensajeDeInicio");
+            esPrimerToque = false;
+        }
         var posicion = $(this).index();
         var fila = Math.floor(posicion/tamaño);
         var columna = (posicion%tamaño);

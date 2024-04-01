@@ -2,10 +2,11 @@
 
 * {
     font-family: "Lato", sans-serif;
+    user-select: none;
 }
 
 :root {
-    --primario: white;
-    --secundario: black;
+    --primario: rgb(17, 19, 27);
+    --secundario: rgb(255, 242, 202);
     --tercero: gray;
 }

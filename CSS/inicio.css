@@ -5,12 +5,15 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+    background-color: var(--primario);
+    padding: 0;
 }
 
 h1 {
     letter-spacing: 15px;
     margin: 0;
     padding: 0;
+    color: var(--secundario);
 }
 
 h2 {
@@ -18,6 +21,7 @@ h2 {
     font-weight: 400;
     margin: 0;
     margin-top: 30px;
+    color: var(--secundario);
 }
 
 .btn-menuPrincipal {
@@ -37,6 +41,7 @@ h2 {
     justify-content: center;
     align-items: center;
     transition: 0.1s;
+    text-decoration: none;
 }
 
 .btn-menuPrincipal::after {
