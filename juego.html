@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/juego.css">
+    <link rel="stylesheet" href="CSS/prefix.css">
+    <title>Buscaminas</title>
+</head>
+
+<body>
+    <div id="cont-switch-bandera">
+        <button class="switch-bandera-item" id="switch-bandera-bandera">
+            <i class="fa-solid fa-flag"></i>
+        </button>
+        <button class="switch-bandera-item switch-modo-activo" id="switch-bandera-bomba">
+            <i class="fa-solid fa-bomb"></i>
+        </button>
+        <div id="div-switch-bandera-efectoGota"></div>
+    </div>
+    <div id="cont-tablero">
+        <button class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
+            class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="JS/juego.js"></script>
+    <script src="https://kit.fontawesome.com/5049a1cee4.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

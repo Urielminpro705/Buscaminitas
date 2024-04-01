@@ -1,152 +1,62 @@
 body {
-    background-color: var(--primario);
     height: 100vh;
-    padding: 0;
-    margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    margin: 0;
 }
 
-#cont-tablero {
-    width: 500px;
-    height: 500px;
+h1 {
+    letter-spacing: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.btn-menuPrincipal {
+    border: 2px solid transparent;
     background-color: var(--primario);
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
-    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
-    overflow: hidden;
-}
-
-.btn-casillas {
-    border: none;
-    margin: 10px 0px;
-    background-color: transparent;
-    border-left: 1.5px solid var(--tercero);
-    border-right: 1.5px solid var(--tercero);
-    color: var(--tercero);
+    color: var(--secundario);
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
+    transition: 0.1s;
 }
 
-.btn-casillas::after {
+.btn-menuPrincipal::after {
     content: "";
-    width: 30px;
-    height: 50px;
-    box-sizing: border-box;
+    width: 200px;
     position: absolute;
-    border-top: 1.5px solid var(--tercero);
-    border-bottom: 1.5px solid var(--tercero);
-}
-
-.btn-casillas::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
+    height: 40px;
+    border: 2px solid var(--secundario);
+    border-radius: 30px;
     transition: 0.3s;
 }
 
-.btn-casillas-virgen::before {
-    content: "";
-    background-color: rgba(255, 0, 0, 0.226);
-    width: 50px;
-    height: 50px;
-}
-
-.btn-casillas-bandera::before {
+.btn-menuPrincipal:hover {
+    border-color: var(--secundario);
     background-color: var(--secundario);
-    content: "\f024";
-    font: var(--fa-font-solid);
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
     color: var(--primario);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
 }
 
-.btn-casillas-usado::before {
-    content: "";
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-}
-
-#cont-switch-bandera {
-    display: flex;
-    position: absolute;
-    left: 50px;
-    top: 100px;
-    width: 100px;
+.btn-menuPrincipal:hover::after {
     height: 50px;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.switch-bandera-item {
-    background-color: transparent;
-    height: 100%;
-    width: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--secundario);
-    border: none;
-    font-size: 1.2rem;
-    padding: 0;
-    margin: 0;
-    z-index: 1;
-}
-
-.switch-modo-activo {
-    color: var(--primario);
-    transform-origin: left;
-    background-color: var(--secundario);
-}
-
-#div-switch-bandera-efectoGota {
-    left: 50px;
-    border-radius:50%;
-    height: 50px;
-    position: absolute;
-    width: 50px;
-    background-color: var(--secundario);
-    transition: 0.3s;
-}
-
-.switch-bandera-efectoGota {
-    animation: switchModo 0.4s ease-in forwards;
-}
-
-.switch-bandera-efectoGota-reverse {
-    animation: switchModo 0.4s reverse forwards;
-}
-
-@keyframes switchModo {
-    10% {
-        width: 50px;
-        left: 50px;
-        height: 50px;
-    }
-
-    50% {
-        width: 20px;
-        height:10px;
-        left: 40px;
-        border-radius: 30px;
-    }
-    
-    100% {
-        left: 0;
-        width: 50px;
-        height: 50px;
-    }
+    width: 210px;
+    border-color: transparent;
 }
