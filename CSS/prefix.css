@@ -10,3 +10,45 @@
     --secundario: rgb(255, 242, 202);
     --tercero: gray;
 }
+
+.btn-menu {
+    border: 2px solid transparent;
+    background-color: transparent;
+    color: var(--secundario);
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s;
+    text-decoration: none;
+}
+
+.btn-menu::after {
+    content: "";
+    width: 200px;
+    position: absolute;
+    height: 40px;
+    border: 2px solid var(--secundario);
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-menu:hover {
+    border-color: var(--secundario);
+    background-color: var(--secundario);
+    color: var(--primario);
+}
+
+.btn-menu:hover::after {
+    height: 50px;
+    width: 210px;
+    border-color: transparent;
+}

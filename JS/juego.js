@@ -35,6 +35,15 @@ $(document).ready(function() {
         }
     })
 
+    function mostrarPantallaVictoria() {
+        $("#cont-mensajeFinDelJuego").css("background-color","var(--primario)");
+        $("#cont-mensajeFinDelJuego h2").css("color","var(--secundario)");
+        $("#cont-mensajeFinDelJuego h3").css("color","var(--secundario)");
+        $("#cont-mensajeFinDelJuego").css("pointer-events","all");
+        $("#cont-mensajeFinDelJuego button").removeClass("btn-menuOculto")
+        $("#cont-mensajeFinDelJuego button").addClass("btn-menu")
+    }
+
     function crearTablero() {
         for(var i = 0; i < tamaño; i++) {
             tablero[i] = new Array(tamaño).fill(-2);
@@ -61,6 +70,7 @@ $(document).ready(function() {
     function detectarBombas(fila, columna) {
         if (tablero[fila][columna] == -1) {
             yaPerdio = true;
+            mostrarPantallaVictoria();
             console.log("Perdiste UWU")
         } else if(tablero[fila][columna] != 0) {
             var f = (fila == 0 || fila == (tamaño-1)) ? 1 : 0;
