@@ -44,6 +44,15 @@ $(document).ready(function() {
         $("#cont-mensajeFinDelJuego button").addClass("btn-menu")
     }
 
+    function mostrarPantallaDerrota() {
+        $("#cont-mensajeFinDelJuego").css("background-color","var(--primario)");
+        $("#cont-mensajeFinDelJuego h2").css("color","var(--secundario)");
+        $("#cont-mensajeFinDelJuego h3").css("color","var(--secundario)");
+        $("#cont-mensajeFinDelJuego").css("pointer-events","all");
+        $("#cont-mensajeFinDelJuego button").removeClass("btn-menuOculto")
+        $("#cont-mensajeFinDelJuego button").addClass("btn-menu")
+    }
+
     function crearTablero() {
         for(var i = 0; i < tamaño; i++) {
             tablero[i] = new Array(tamaño).fill(-2);
@@ -67,11 +76,14 @@ $(document).ready(function() {
         }
     }
 
+    function yaGano() {
+
+    }
+
     function detectarBombas(fila, columna) {
         if (tablero[fila][columna] == -1) {
             yaPerdio = true;
-            mostrarPantallaVictoria();
-            console.log("Perdiste UWU")
+            console.log("Perdiste UWU");
         } else if(tablero[fila][columna] != 0) {
             var f = (fila == 0 || fila == (tamaño-1)) ? 1 : 0;
             var c = (columna == 0 || columna == (tamaño-1)) ? 1 : 0;
@@ -135,27 +147,51 @@ $(document).ready(function() {
 
     function mostrarCambios() {
         let casillasTocadas = [];
-        for (var f = 0; f < tamaño; f++) {
-            for (var c = 0; c < tamaño; c++) {
-                if (tablero[f][c] != -2 && tablero[f][c] != -1) {
-                    var indiceTotal = (tamaño*f) + c;
-                    casillasTocadas.push(indiceTotal);
+        if (yaPerdio == true) {
+            var casillasBombas = []
+            for (var f = 0; f < tamaño; f++) {
+                for (var c = 0; c < tamaño; c++) {
+                    if (tablero[f][c] == -1) {
+                        var indiceTotal = (tamaño*f) + c;
+                        casillasBombas.push(indiceTotal);
+                    }
                 }
             }
-        }
 
-        casillasTocadas.forEach(function (indice) {
-            var casilla = tableroVisual.children().eq(indice);
-            if (!casilla.hasClass("btn-casillas-bandera")) {
+            casillasBombas.forEach(function(indice) {
+                var casilla = tableroVisual.children().eq(indice);
                 casilla.removeClass("btn-casillas-virgen");
-                casilla.addClass("btn-casillas-usado");
+                casilla.removeClass("btn-casillas-bandera");
+                casilla.addClass("btn-casillas-bomba");
+                var fila = Math.floor(indice/tamaño);
+                var columna = (indice%tamaño);
+                if (tablero[fila][columna] != 0) {
+                    casilla.text(tablero[fila][columna]);
+                }
+            })
+        } else {
+            for (var f = 0; f < tamaño; f++) {
+                for (var c = 0; c < tamaño; c++) {
+                    if (tablero[f][c] != -2 && tablero[f][c] != -1) {
+                        var indiceTotal = (tamaño*f) + c;
+                        casillasTocadas.push(indiceTotal);
+                    }
+                }
             }
-            var fila = Math.floor(indice/tamaño);
-            var columna = (indice%tamaño);
-            if (tablero[fila][columna] != 0) {
-                casilla.text(tablero[fila][columna]);
-            }
-        });
+    
+            casillasTocadas.forEach(function (indice) {
+                var casilla = tableroVisual.children().eq(indice);
+                if (!casilla.hasClass("btn-casillas-bandera")) {
+                    casilla.removeClass("btn-casillas-virgen");
+                    casilla.addClass("btn-casillas-usado");
+                }
+                var fila = Math.floor(indice/tamaño);
+                var columna = (indice%tamaño);
+                if (tablero[fila][columna] != 0) {
+                    casilla.text(tablero[fila][columna]);
+                }
+            });
+        }
     }
 
     crearTablero();
@@ -192,11 +228,11 @@ $(document).ready(function() {
         }
     })
 
-    $("#btn-jugarDeNuevo").click(function() {
+    $(".btn-jugarDeNuevo").click(function() {
         location.reload();
     }) 
 
-    $("#btn-volverAlMenu").click(function() {
+    $(".btn-volverAlMenu").click(function() {
         window.location.href = "index.html"
     })
 })

@@ -99,7 +99,6 @@ body {
 #cont-switch-bandera {
     display: flex;
     position: relative;
-    margin-right: 50px;
     width: 100px;
     height: 50px;
     justify-content: space-evenly;
@@ -183,6 +182,48 @@ body {
 
 .btn-menuOculto::after {
     border-color: transparent;
+}
+
+#cont-menu-lateral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    width: 200px;
+    position: relative;
+}
+
+.cont-menuDerrota {
+    position: absolute;
+    margin-top: 200px;
+    text-align: center;
+    color: var(--secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-casillas-bomba::before {
+    background-color: var(--secundario);
+    content: "\f1e2";
+    font: var(--fa-font-solid);
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    color: var(--primario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.cont-menuDerrota h2 {
+    margin: 0;
+    margin-top: 40px;
+    letter-spacing: 10px;
+    padding: 0;
 }
 
 @keyframes switchModo {

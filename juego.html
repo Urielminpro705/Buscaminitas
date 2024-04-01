@@ -10,15 +10,28 @@
 </head>
 
 <body>
-    <div id="cont-switch-bandera">
-        <button class="switch-bandera-item" id="switch-bandera-bandera">
-            <i class="fa-solid fa-flag"></i>
-        </button>
-        <button class="switch-bandera-item switch-modo-activo" id="switch-bandera-bomba">
-            <i class="fa-solid fa-bomb"></i>
-        </button>
-        <div id="div-switch-bandera-efectoGota"></div>
+    <div id="cont-menu-lateral">
+        <div id="cont-switch-bandera">
+            <button class="switch-bandera-item" id="switch-bandera-bandera">
+                <i class="fa-solid fa-flag"></i>
+            </button>
+            <button class="switch-bandera-item switch-modo-activo" id="switch-bandera-bomba">
+                <i class="fa-solid fa-bomb"></i>
+            </button>
+            <div id="div-switch-bandera-efectoGota"></div>
+        </div>
+        <div class="cont-menuDerrota">
+            <h2>PERDISTE</h2>
+            <button class="btn-menu btn-jugarDeNuevo">
+                Jugar de nuevo
+            </button>
+        
+            <button class="btn-menu btn-volverAlMenu">
+                Volver al menú
+            </button>
+        </div>
     </div>
+
     <div id="cont-tablero" class="tablero-mensajeDeInicio">
         <button class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
             class="btn-casillas btn-casillas-virgen"></button><button class="btn-casillas btn-casillas-virgen"></button><button
@@ -74,11 +87,11 @@
     <div id="cont-mensajeFinDelJuego">
         <h2>FELICIDADES</h2>
         <h3>Evitaste todas las minas</h3>
-        <button class="btn-menu btn-menuOculto" id="btn-jugarDeNuevo">
+        <button class="btn-menu btn-menuOculto btn-jugarDeNuevo">
             Jugar de nuevo
         </button>
 
-        <button class="btn-menu btn-menuOculto" id="btn-volverAlMenu">
+        <button class="btn-menu btn-menuOculto btn-volverAlMenu">
             Volver al menú
         </button>
     </div>
