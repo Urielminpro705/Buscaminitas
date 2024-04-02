@@ -198,11 +198,12 @@ body {
     position: absolute;
     margin-top: 200px;
     text-align: center;
-    color: var(--secundario);
+    color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
 }
 
 .btn-casillas-bomba::before {

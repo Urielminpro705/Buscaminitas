@@ -41,16 +41,12 @@ $(document).ready(function() {
         $("#cont-mensajeFinDelJuego h3").css("color","var(--secundario)");
         $("#cont-mensajeFinDelJuego").css("pointer-events","all");
         $("#cont-mensajeFinDelJuego button").removeClass("btn-menuOculto")
-        $("#cont-mensajeFinDelJuego button").addClass("btn-menu")
     }
 
     function mostrarPantallaDerrota() {
-        $("#cont-mensajeFinDelJuego").css("background-color","var(--primario)");
-        $("#cont-mensajeFinDelJuego h2").css("color","var(--secundario)");
-        $("#cont-mensajeFinDelJuego h3").css("color","var(--secundario)");
-        $("#cont-mensajeFinDelJuego").css("pointer-events","all");
-        $("#cont-mensajeFinDelJuego button").removeClass("btn-menuOculto")
-        $("#cont-mensajeFinDelJuego button").addClass("btn-menu")
+        $(".cont-menuDerrota").css("color","var(--secundario)");
+        $(".cont-menuDerrota").css("pointer-events","all");
+        $(".cont-menuDerrota button").removeClass("btn-menuOculto");
     }
 
     function crearTablero() {
@@ -77,12 +73,23 @@ $(document).ready(function() {
     }
 
     function yaGano() {
+        for (var f = 0; f < tamaño; f++){
+            for (var c = 0; c < tamaño; c++) {
+                if (tablero[f][c] == -2) {
+                    return false
+                }
+            }
+        }
 
+        if (yaPerdio == false) {
+            return true
+        }
     }
 
     function detectarBombas(fila, columna) {
         if (tablero[fila][columna] == -1) {
             yaPerdio = true;
+            mostrarPantallaDerrota();
             console.log("Perdiste UWU");
         } else if(tablero[fila][columna] != 0) {
             var f = (fila == 0 || fila == (tamaño-1)) ? 1 : 0;
@@ -224,6 +231,9 @@ $(document).ready(function() {
                     console.log(fila)
                 })
                 mostrarCambios();
+                if (yaGano() == true) {
+                    mostrarPantallaVictoria();
+                }
             }
         }
     })
