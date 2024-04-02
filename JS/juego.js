@@ -61,7 +61,7 @@ $(document).ready(function() {
 
     function plantarBombas() {
         var i = 0;
-        while (i < 20) {
+        while (i < 15) {
             var filaRandom = numeroAleatorio(0,tamaño);
             var columnaRandom = numeroAleatorio(0,tamaño);
 
